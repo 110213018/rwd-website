@@ -1,6 +1,6 @@
-# online_ording_system
+# Responsive Web Design
 
-A new Flutter project.
+An Easy-To-Use RWD Website For Practicing
 
 ## Getting Started
 
