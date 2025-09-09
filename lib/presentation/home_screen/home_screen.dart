@@ -518,7 +518,118 @@ class _HomeScreenState extends State<HomeScreen>{        // _ 代表「這個類
         width: double.infinity,
         height: double.infinity,
         color: const Color(0xFFFAF7F3),
-        child: const Center(child: Text('手機版內容區')),
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            Positioned(
+              bottom: screenWidth/50,
+              left: -150,
+              child: Image.asset(
+                'assets/images/ellipse_light.png',
+                width: screenWidth,
+                // height: screenHeight * 0.6, // 因為這個，畫面上下縮放的時候，會出現白帶
+                fit: BoxFit.cover,
+              ),
+            ),
+            Positioned(
+              top: -(screenWidth/8),
+              right: -200,
+              child: Image.asset(
+                'assets/images/ellipse_dark.png',
+                width: screenWidth,
+                // height: screenHeight * 0.6,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Center(
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start, // 兩側對齊
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center, //中間對齊
+                      children: [
+                        Text(
+                          'An Easy-To-Use \nRWD Website\nFor Practicing',
+                          style: TextStyle(
+                            fontFamily: 'Karla',
+                            fontSize: screenWidth / 10,
+                            fontWeight: FontWeight.w800,
+                            color: Color(0xFFD9A299),
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center, //中間對齊
+                      children: [
+                        Text(
+                          'When zooming in or out,\nor resizing the screen in any direction,\nthe website functions smoothly without errors\nand responds to different screen sizes with adaptive layout designs.',
+                          style: TextStyle(
+                            fontFamily: 'Karla',
+                            fontSize: screenWidth / 40,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xFFD9A299),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 40),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start, // 文字靠左對齊
+                          children: [
+                            HoverButton(
+                              text: ' VIEW ON GITHUB ',
+                              hoverBg: const Color(0xFFB58B6B),
+                              normalBg: Colors.transparent,
+                              hoverText: Colors.white,
+                              normalText: const Color(0xFFB58B6B),
+                              borderColor: const Color(0xFFB58B6B),
+                              onPressed: () {},
+                              fontSize: screenWidth / 40,
+                              horizontalPadding: screenWidth * 0.03,
+                              verticalPadding: screenHeight * 0.03,
+                            ),
+                            SizedBox(height: 50),
+                            HoverButton(
+                              text: 'VIEW ON YOUTUBE',
+                              hoverBg: const Color(0xFFAFC4D9),
+                              normalBg: Colors.transparent,
+                              hoverText: Colors.white,
+                              normalText: const Color(0xFFAFC4D9),
+                              borderColor: const Color(0xFFAFC4D9),
+                              onPressed: () {},
+                              fontSize: screenWidth / 40,
+                              horizontalPadding: screenWidth * 0.03,
+                              verticalPadding: screenHeight * 0.03,
+                            ),
+                          ],
+                        ),
+                        SizedBox(width: 50),
+                        Flexible(
+                        // fit: FlexFit.loose,
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(
+                            maxWidth: screenWidth * 0.45,
+                          ),
+                          child: Image.asset(
+                            'assets/images/rwd.png',
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
