@@ -1,6 +1,6 @@
-# online_ording_system
+# Responsive Web Design
 
-A new Flutter project.
+An Easy-To-Use RWD Website. When zooming in or out, or resizing the screen in any direction, the website functions smoothly without errors and responds to different screen sizes with adaptive layout designs.
 
 ## Getting Started
 
